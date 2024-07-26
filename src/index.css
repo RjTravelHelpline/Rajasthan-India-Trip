@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+:root {
+  --font-head: "Inter Tight", sans-serif;
+  --font-para: "Open Sans", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  --font-subHead: "Roboto", sans-serif;
+  --color-primary: #fe5957;
+  --color-secondary: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: var(--font-default);
+}
+body h1 {
+  font-family: var(--font-head);
+  letter-spacing: -1px;
+}
+
+body h2 {
+  font-family: var(--font-head);
+}
+
+body p {
+  font-family: var(--font-para);
+}
+body a {
+  text-decoration: none;
+  font-family: var(--font-space);
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+body button {
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-space);
+  font-weight: 500px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+body button:hover {
+  filter: brightness(0.85);
+}

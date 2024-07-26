@@ -1,0 +1,37 @@
+.sticky-footer-container {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-secondary);
+  padding-block: 16px;
+  box-shadow: 0 -24px 44px #79797931;
+  .row {
+    width: 94%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    p {
+      padding: 12px;
+      font-size: 1.56em;
+      border-radius: 999px;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+      transition: all 0.1s ease-in-out;
+    }
+    p:hover {
+      color: var(--color-primary);
+      background-color: rgba(48, 48, 48, 0.205);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sticky-footer-container {
+    display: flex;
+  }
+}
