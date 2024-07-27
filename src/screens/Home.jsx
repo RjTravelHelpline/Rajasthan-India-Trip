@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import StickyFooter from "../components/Sticky-footer";
 import ChooseUs from "./ChooseUs";
 import About from "./About";
+import HomeBanner from "./HomeBanner";
 
 const Home = () => {
   const cardContents = [
@@ -86,6 +87,7 @@ const Home = () => {
   ];
   return (
     <>
+      <HomeBanner />
       <div className="home-container" id="home">
         <div className="row">
           <h2>featured tours</h2>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import "./navbar.scss";
 import { CiFacebook } from "react-icons/ci";
@@ -6,6 +7,11 @@ import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
       <div className="nav-container">
@@ -34,11 +40,16 @@ const Navbar = () => {
           </div>
 
           <div className="right">
-            <a href="#home">Home</a>
-            <a href="#home">Packages</a>
-            <a href="#home">About Us</a>
-            <a href="#whychooseus">Why Choose Us</a>
-            <a href="#home">Connect</a>
+            <button className="menu-toggle" onClick={toggleMenu}>
+              ☰
+            </button>
+            <div className={`nav-links ${isOpen ? "open" : ""}`}>
+              <a href="#home" onClick={()=>{setIsOpen(!isOpen)}}>Home</a>
+              <a href="#packages" onClick={()=>{setIsOpen(!isOpen)}}>Packages</a>
+              <a href="#aboutus" onClick={()=>{setIsOpen(!isOpen)}}>About Us</a>
+              <a href="#whychooseus" onClick={()=>{setIsOpen(!isOpen)}}>Why Choose Us</a>
+              <a href="#connect" onClick={()=>{setIsOpen(!isOpen)}}>Connect</a>
+            </div>
           </div>
         </div>
       </div>
