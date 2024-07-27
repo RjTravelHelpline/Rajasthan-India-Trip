@@ -1,11 +1,12 @@
 import React from "react";
 import "./about.scss";
 import aboutImg from "/about-img.jpg";
+import { BsArrowRight } from "react-icons/bs";
 
 const About = () => {
   return (
     <>
-      <div className="about-container">
+      <div className="about-container" id="aboutus">
         <div className="row">
           <div className="left">
             <div className="image-container">
@@ -18,26 +19,17 @@ const About = () => {
           <div className="right">
             {" "}
             <h2>about us</h2>
-            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis
-              optio sequi sint aliquam animi temporibus, enim maiores ratione
-              magnam quibusdam. Sunt debitis animi deleniti ad ex voluptas
-              libero ullam? Ea fugiat unde ullam. Natus esse quae tempora non!
+            <h1>Who we are?</h1>
+            <p>Rajasthan is one of India's leading tourist places, boasting magnificent forts and glorious royal palaces, which reverberate the sages of victory. Mouthwatering dishes, colorful culture, exquisite handicrafts, and architectural wonders are regarded as a few of the reasons why people love to choose our Rajasthan tour packages.
+
             </p>
             <div className="about-extra">
-              <h2>Travel and Experience The Adventure</h2>
-              <p>
-                <span>Exclusive Offers:</span> Unique travel opportunities.
+              <h2>We are the Leading Rajasthan Tour Planners in India</h2>
+              <p>We at Rajasthan Travel Helpline believe in offering only high-quality and professional assistance. Our team is working 24/7 just for your convenience.
               </p>
-              <p>
-                <span>Immersive Trips:</span> Dive into new cultures.
-              </p>
-              <p>
-                <span>Exciting Adventures:</span> Unforgettable thrills.
-              </p>
+              <p>Our aim is to make your travel journey the best moment of your life. As you know that Rajasthan is the home of different thrilling adventures. You can go for a ride on the hot air balloon in different places, such as Ranthambore, Pushkar, and Jaipur, and sail across the Rajasthani sky.</p>
 
-              <button>Book Now</button>
+              <button>Book Now <BsArrowRight className="icon"/></button>
             </div>
           </div>
         </div>

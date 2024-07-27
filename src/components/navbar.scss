@@ -41,7 +41,7 @@
   }
   .row {
     width: 88%;
-    padding: 24px 8px;
+    padding: 12px 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,7 +68,8 @@
         border: none;
         font-size: 24px;
         cursor: pointer;
-        padding: 7px 12px;
+        padding: 12px;
+        font-size: 2em;
         border-radius: 999px;
       }
       .menu-toggle:hover {
@@ -82,14 +83,9 @@
 }
 @media screen and (max-width: 768px) {
   .nav-container {
+    padding-block: 0px;
     .upper-nav {
-      .row {
-        width: 94% !important;
-        font-size: 0.8em;
-      }
-      .icons {
-        display: none;
-      }
+      display: none;
     }
     .row:last-child {
       width: 94%;
@@ -101,7 +97,7 @@
           justify-content: center;
           align-items: center;
           position: absolute;
-          top: 100px;
+          top: 80px;
           right: 0px;
           left: 0;
           transform: translateX(-100%);
@@ -115,7 +111,7 @@
             transform: translateX(0px);
           }
           a {
-            padding: 10px 0;
+            padding: 16px 0;
           }
         }
 

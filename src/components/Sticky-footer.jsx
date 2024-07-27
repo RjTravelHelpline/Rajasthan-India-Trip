@@ -1,9 +1,9 @@
 import React from "react";
 import "./sticky-footer.scss";
-import { CiHome } from "react-icons/ci";
-import { BsBook } from "react-icons/bs";
-import { BsChatRightHeart } from "react-icons/bs";
-import { RiContactsLine } from "react-icons/ri";
+import { CiPhone } from "react-icons/ci";
+import { CiChat1 } from "react-icons/ci";
+import { CiMail } from "react-icons/ci";
+import { SiWhatsapp } from "react-icons/si";
 
 const StickyFooter = () => {
   return (
@@ -11,16 +11,16 @@ const StickyFooter = () => {
       <div className="sticky-footer-container">
         <div className="row">
           <p>
-            <CiHome />
+            <CiPhone />
           </p>
           <p>
-            <BsBook />
+            <SiWhatsapp />
           </p>
           <p>
-            <BsChatRightHeart />
+            <CiMail />
           </p>
           <p>
-            <RiContactsLine />
+            <CiChat1 />
           </p>
         </div>
       </div>

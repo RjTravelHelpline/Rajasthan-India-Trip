@@ -5,7 +5,7 @@
   align-items: center;
   padding-block: 44px;
   .row {
-    width: 100%;
+    width: 94%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,7 @@
       img {
         width: 100%;
         border-radius: 44px;
+        box-shadow: 40px 40px 0px rgba(0, 0, 0, 0.068);
       }
       p {
         position: absolute;
@@ -53,7 +54,7 @@
       // }
     }
     .right {
-      flex: 1 300px;
+      flex: 1 400px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -86,7 +87,6 @@
       font-family: var(--font-space);
     }
     p {
-      font-family: var(--font-head);
       span {
         font-weight: bold;
       }
@@ -94,16 +94,41 @@
     button {
       width: auto;
       margin-top: 16px;
-      padding: 16px 28px;
+      padding: 20px 30px;
       color: var(--color-secondary);
       background-color: var(--color-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      .icon {
+        font-size: 1.5em;
+      }
+
     }
+    button::before {
+      content: "";
+      width:8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--color-secondary);
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+      button:hover {
+        filter: brightness(1) !important;
+        background-color: black !important;
+      }
+
   }
 }
 
 @media screen and (max-width: 768px) {
   .about-container {
     .row {
+      width: 100%;
       .left {
         .image-container {
           width: 94%;

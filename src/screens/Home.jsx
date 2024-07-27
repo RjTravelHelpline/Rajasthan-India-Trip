@@ -88,7 +88,7 @@ const Home = () => {
   return (
     <>
       <HomeBanner />
-      <div className="home-container" id="home">
+      <div className="home-container" id="packages">
         <div className="row">
           <h2>featured tours</h2>
           <h1>the most favorite tour place</h1>
@@ -110,7 +110,10 @@ const Home = () => {
                       <span>↪</span> {content.inclusion2}
                     </p>
                     <p>₹3999</p>
-                    <button>Enquire Now</button>
+                    <div className="buttons">
+                      <button>Contact Us</button>
+                      <button>Enquire Now</button>
+                    </div>
                   </div>
                 </div>
               </div>

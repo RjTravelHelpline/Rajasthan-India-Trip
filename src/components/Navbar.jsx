@@ -5,6 +5,7 @@ import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
+import { MdClearAll } from "react-icons/md";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +24,19 @@ const Navbar = () => {
               Rajasthan(India)
             </p>
             <div className="icons">
-              <CiFacebook className="social-icon" />
-              <CiInstagram className="social-icon" />
-              <CiTwitter className="social-icon" />
-              <CiLinkedin className="social-icon" />
+              <a
+                href="https://www.facebook.com/rajasthantravelhelpline/"
+                target="_blank"
+              >
+                <CiFacebook className="social-icon" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/rajasthantravelhelpline/"
+                target="_blank"
+              >
+                <CiInstagram className="social-icon" />
+              </a>
             </div>
           </div>
         </div>
@@ -41,14 +51,49 @@ const Navbar = () => {
 
           <div className="right">
             <button className="menu-toggle" onClick={toggleMenu}>
-              ☰
+              <MdClearAll />
             </button>
             <div className={`nav-links ${isOpen ? "open" : ""}`}>
-              <a href="#home" onClick={()=>{setIsOpen(!isOpen)}}>Home</a>
-              <a href="#packages" onClick={()=>{setIsOpen(!isOpen)}}>Packages</a>
-              <a href="#aboutus" onClick={()=>{setIsOpen(!isOpen)}}>About Us</a>
-              <a href="#whychooseus" onClick={()=>{setIsOpen(!isOpen)}}>Why Choose Us</a>
-              <a href="#connect" onClick={()=>{setIsOpen(!isOpen)}}>Connect</a>
+              <a
+                href="#home"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+              >
+                Home
+              </a>
+              <a
+                href="#packages"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+              >
+                Packages
+              </a>
+              <a
+                href="#aboutus"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+              >
+                About Us
+              </a>
+              <a
+                href="#whychooseus"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+              >
+                Why Choose Us
+              </a>
+              <a
+                href="#connect"
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                }}
+              >
+                Contact
+              </a>
             </div>
           </div>
         </div>
