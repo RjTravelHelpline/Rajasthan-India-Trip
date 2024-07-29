@@ -1,0 +1,58 @@
+.moments-container {
+  padding-block: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .row {
+    width: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      color: var(--color-primary);
+      font-weight: 400;
+      font-size: 1.2em;
+      text-transform: capitalize;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    h1 {
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 28px;
+      font-size: clamp(2em, 4vw, 6em);
+      width: 100%;
+    }
+    .moments-gallery {
+      width: 100%;
+      display: flex;
+      overflow: scroll;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+      border-radius: 24px;
+      
+      img {
+        width: 100%;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width:768px){
+  .moments-container {
+    .row {
+      width: 94%;
+      .moments-gallery {
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+}

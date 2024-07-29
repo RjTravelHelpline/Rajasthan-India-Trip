@@ -3,24 +3,83 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  flex-direction: column;
+  // background-color: black;
+  color: black;
   padding-block: 44px;
+  .row:last-child {
+    justify-content: start;
+    a {
+      text-decoration: underline;
+    }
+  }
   .row {
     width: 88%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .footer-card:first-child {
+      // width: 200px;
+      img {
+        width: 80%;
+      }
+    }
     .footer-card {
-      padding: 16px;
-      width: 400px;
-      color: var(--color-secondary);
+      padding: 8px;
+      width: 350px;
+      flex-grow: 1 300px;
+      gap: 16px;
+
       h2 {
         margin-bottom: 16px;
+        font-size: 1.8em;
+        position: relative;
+      }
+      h2::before {
+        content: "";
+        height: 8px;
+        width: 8px;
+        background-color: var(--color-primary) !important;
+        border-radius: 999px;
+        color: var(--color-primary);
+        position: absolute;
+        top: -4px;
+        left: -4px;
       }
       p {
-        font-size: 0.9em;
+        font-size: 1em;
         opacity: 0.85;
         font-family: var(--font-subHead);
+        line-height: 1.2;
+        span {
+          font-weight: bold;
+        }
+      }
+      p:nth-child(3), p:nth-child(4) {
+        text-decoration: underline;
+        padding-block: 8px;
+      }
+      .social-icons {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        .icon {
+          border-radius: 16px;
+          font-size: 3em;
+          padding: 12px;
+          cursor: pointer;
+          color: #00000044;
+          transition: all 0.2s ease-in-out;
+          border: 1px solid #00000044;
+        }
+        .icon:hover {
+          background-color: var(--color-primary);
+          color: var(--color-secondary);
+        }
       }
     }
     .footer-card:nth-child(2),
@@ -32,14 +91,13 @@
   }
 }
 
-@media screen and (max-width:768px){
-    .footer-container {
-        .row {
-            width: 94%;
-            .footer-card {
-                width: 100%;
-            }
-        }
-
+@media screen and (max-width: 768px) {
+  .footer-container {
+    .row {
+      width: 94%;
+      .footer-card {
+        width: 100%;
+      }
     }
+  }
 }

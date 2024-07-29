@@ -1,27 +1,27 @@
 import React from "react";
 import "./sticky-footer.scss";
-import { CiPhone } from "react-icons/ci";
-import { CiChat1 } from "react-icons/ci";
-import { CiMail } from "react-icons/ci";
-import { SiWhatsapp } from "react-icons/si";
 
 const StickyFooter = () => {
   return (
     <>
       <div className="sticky-footer-container">
         <div className="row">
-          <p>
-            <CiPhone />
-          </p>
-          <p>
-            <SiWhatsapp />
-          </p>
-          <p>
-            <CiMail />
-          </p>
-          <p>
-            <CiChat1 />
-          </p>
+          <div className="icon-container">
+            <a href="">
+              <img src="/telephone.png" alt="telephone" />
+            </a>
+          </div>
+
+          <div className="icon-container">
+            <a href="">
+              <img src="/whatsapp.png" alt="whatsapp" />
+            </a>
+          </div>
+          <div className="icon-container">
+            <a href="">
+              <img src="/gmail.png" alt="gmail" />
+            </a>
+          </div>
         </div>
       </div>
     </>

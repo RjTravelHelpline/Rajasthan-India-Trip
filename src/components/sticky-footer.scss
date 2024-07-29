@@ -14,14 +14,15 @@
     justify-content: space-around;
     align-items: center;
     gap: 8px;
-    p {
-      padding: 12px;
-      font-size: 1.56em;
-      border-radius: 999px;
-      cursor: pointer;
-      width: 48px;
-      height: 48px;
-      transition: all 0.1s ease-in-out;
+
+    .icon-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 999px;
+      img{
+        width: 2.4em;
+      }
     }
     p:hover {
       color: var(--color-primary);

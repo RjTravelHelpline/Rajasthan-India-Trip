@@ -3,8 +3,7 @@ import React from "react";
 import "./navbar.scss";
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
-import { CiTwitter } from "react-icons/ci";
-import { CiLinkedin } from "react-icons/ci";
+import { CiMail } from "react-icons/ci";
 import { MdClearAll } from "react-icons/md";
 
 const Navbar = () => {
@@ -37,6 +36,13 @@ const Navbar = () => {
               >
                 <CiInstagram className="social-icon" />
               </a>
+              <a
+                href="https://www.instagram.com/rajasthantravelhelpline/"
+                target="_blank"
+              >
+                <CiMail className="social-icon"/>
+              </a>
+              
             </div>
           </div>
         </div>
@@ -87,7 +93,7 @@ const Navbar = () => {
                 Why Choose Us
               </a>
               <a
-                href="#connect"
+                href="#contact"
                 onClick={() => {
                   setIsOpen(!isOpen);
                 }}

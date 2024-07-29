@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import "./home.scss";
 import cardImg from "/card-img01.webp";
 import Footer from "../components/Footer";
@@ -6,83 +6,225 @@ import StickyFooter from "../components/Sticky-footer";
 import ChooseUs from "./ChooseUs";
 import About from "./About";
 import HomeBanner from "./HomeBanner";
+import { GoHomeFill } from "react-icons/go";
+
+import { GiHotMeal } from "react-icons/gi";
+import { FaHotel } from "react-icons/fa6";
+
+import { MdDirectionsTransit } from "react-icons/md";
+import Moments from "./Moments";
+import { SiWhatsapp } from "react-icons/si";
+import { CiPhone } from "react-icons/ci";
+import Privacy from "./Privacy";
+import Terms from "./Terms";
 
 const Home = () => {
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleReadMore = (index) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
   const cardContents = [
     {
-      title: "Jaipur Pushkar Tour Package",
-      inclusion1: "Transportation in Sedan AC Taxi",
-      inclusion2: "Driver Allowance & Fuel",
+      title: "10 Days Best of Rajasthan Tour",
+      coveredPlaces: "09 Nights / 10 Days",
+      image: "/jaipur.jpg",
+      PlacesCovered:
+        "Jaipur > Ranthambore > Chittorgarh > Udaipur > Kumbhalgarh > Jodhpur > Jaisalmer > Thar Desert > Bikaner > Jaipur",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "01 Jungle Safari by Canter.",
+        "Hi-Tea with Bonfire & Cultural Programs at Desert Camp.",
+        "Camel Ride over Sand Dunes.",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat)",
+      ],
+      price: "26300/-",
     },
     {
-      title: "Agra Delhi Tour Package",
-      inclusion1: "Transportation in SUV",
-      inclusion2: "Guide Service",
+      title: "08 Days Rajasthan Budget Tour",
+      coveredPlaces: "07 Nights / 08 Days",
+      image: "/jaipur-pushkar.jpg",
+      PlacesCovered:
+        "Jaipur > Pushkar > Chittorgarh > Udaipur > Kumbhalgarh > Jodhpur > Jaisalmer > Thar Desert",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Hi-Tea with Bonfire & Cultural Programs at Desert Camp.",
+        "Camel Ride over Sand Dunes.",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "19999/-",
     },
     {
-      title: "Goa Beach Tour Package",
-      inclusion1: "Beachfront Accommodation",
-      inclusion2: "Breakfast Included",
+      title: "06 Days Scenic Rajasthan Tour",
+      coveredPlaces: "05 Nights / 06 Days",
+      image: "/jaipur-kumbhalgarh.webp",
+      PlacesCovered:
+        "Udaipur > Kumbhalgarh > Ranakpur > Jodhpur > Jaisalmer > Thar Desert > Indo-Pak Border",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Hi-Tea with Bonfire & Cultural Programs at Desert Camp.",
+        "Camel Ride over Sand Dunes.",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "14999/-",
     },
     {
-      title: "Kerala Backwaters Tour Package",
-      inclusion1: "Houseboat Stay",
-      inclusion2: "All Meals Included",
+      title: "05 Days Romantic Rajasthan Tour",
+      coveredPlaces: "04 Nights / 05 Days",
+      image: "/jaipur-kishangarh.webp",
+      PlacesCovered:
+        "Jaipur > Marble Dumping Yard > Pushkar > Chittorgarh > Udaipur",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "13799/-",
     },
     {
-      title: "Rajasthan Desert Tour Package",
-      inclusion1: "Camel Safari",
-      inclusion2: "Cultural Evening",
+      title: "05 Days Golden Triangle Tour",
+      coveredPlaces: "04 Nights / 05 Days",
+      image: "/jaipur-agra.jpg",
+      PlacesCovered: "Delhi > Agra > Fatehpur Sikri > Abhaneri > Jaipur ",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "12899/-",
     },
     {
-      title: "Mumbai City Tour Package",
-      inclusion1: "City Sightseeing",
-      inclusion2: "Lunch Included",
+      title: "04 Days Rajasthan Wildlife Tour",
+      coveredPlaces: "03 Nights / 04 Days",
+      image: "/jaipur-jhalana.webp",
+      PlacesCovered:
+        "Jaipur > Jhalana Leopard Safari > Abhaneri > Ranthambhore Tiger Reserve",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "01 Jungle Safari by Gypsy (Jhalana Leopard Reserve)",
+        "01 Jungle Safari by Canter (Ranthambore Tiger Reserve)",
+        "Local Guide Services during Jaipur Sightseeing",
+        "Packaged Drinking Water Bottles during travel",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "12599/-",
     },
     {
-      title: "Kashmir Valley Tour Package",
-      inclusion1: "Shikara Ride",
-      inclusion2: "Local Guide",
+      title: "04 Days Jaipur - Jaisalmer Train Tour",
+      coveredPlaces: "03 Nights / 04 Days",
+      image: "/jaipur-jaisalmer.jpg",
+      PlacesCovered: "Jaipur > Jaisalmer > Thar Desert",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Jaipur to Jaisalmer Train Ticket",
+        "Exclusive Air-Conditioned Vehicle",
+        "Parkings & Driver Allowance",
+        "Hi-Tea with Bonfire & Cultural Programs at Desert Camp.",
+        "Camel Ride over Sand Dunes.",
+        "Local Guide Services during Sightseeing",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary.",
+        "All Taxes",
+      ],
+      price: "9499/-",
     },
     {
-      title: "Himachal Adventure Tour Package",
-      inclusion1: "Trekking",
-      inclusion2: "Camping Gear",
+      title: "03 Days Udaipur Tour Package",
+      coveredPlaces: "02 Nights / 03 Days",
+      image: "/jaipur-chittor.webp",
+      PlacesCovered: "Udaipur > Chittorgarh",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel.",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary.",
+        "All Taxes",
+      ],
+      price: "6499/-",
     },
     {
-      title: "Andaman Islands Tour Package",
-      inclusion1: "Snorkeling",
-      inclusion2: "Island Hopping",
-    },
-    {
-      title: "Uttarakhand Wildlife Tour Package",
-      inclusion1: "Safari",
-      inclusion2: "Wildlife Guide",
-    },
-    {
-      title: "Tamil Nadu Temple Tour Package",
-      inclusion1: "Temple Visits",
-      inclusion2: "Local Transport",
-    },
-    {
-      title: "Sikkim Mountain Tour Package",
-      inclusion1: "Mountain Climbing",
-      inclusion2: "All Meals Included",
-    },
-    {
-      title: "Punjab Heritage Tour Package",
-      inclusion1: "Heritage Walk",
-      inclusion2: "Traditional Meals",
-    },
-    {
-      title: "Meghalaya Caves Tour Package",
-      inclusion1: "Cave Exploration",
-      inclusion2: "Safety Gear",
-    },
-    {
-      title: "Ladakh Bike Tour Package",
-      inclusion1: "Bike Rental",
-      inclusion2: "Backup Vehicle",
+      title: "03 Days Jaisalmer Desert Tour",
+      coveredPlaces: "02 Nights / 03 Days",
+      image: "/jaipur-jaisalmer.jpg",
+      PlacesCovered: "Jaisalmer > Thar Desert > Indo-Pak Border",
+      inclusions: [
+        "Air-Condition Accommodation",
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "Exclusive Air-Conditioned Vehicle",
+        "Highway Tolls, Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Hi-Tea with Bonfire & Cultural Programs at Desert Camp.",
+        "Camel Ride over Sand Dunes.",
+        "Farewell Gift on Departure.",
+        "Child below 5 years is complimentary (without extra bed & seat).",
+        "All Taxes",
+      ],
+      price: "6499/-",
     },
   ];
   return (
@@ -96,23 +238,53 @@ const Home = () => {
             {cardContents.map((content, index) => (
               <div className="card" key={index}>
                 <div className="card-image">
-                  <img src={cardImg} alt="card-image" />
+                  <img src={content.image} alt="card-image" />
                   <p>Featured ♥</p>
+                  <div className="card-icons">
+                    <GiHotMeal className="icon" />
+                    <MdDirectionsTransit className="icon" />
+                    <FaHotel className="icon" />
+                    <GoHomeFill className="icon" />
+                  </div>
                 </div>
                 <div className="card-row">
+                  <p>{content.coveredPlaces}</p>
                   <h1>{content.title}</h1>
+                  <p>{content.PlacesCovered}</p>
                   <div className="card-details">
                     <h2>Package Inclusion</h2>
-                    <p>
-                      <span>↪</span> {content.inclusion1}
-                    </p>
-                    <p>
-                      <span>↪</span> {content.inclusion2}
-                    </p>
-                    <p>₹3999</p>
+                    {content.inclusions
+                      .slice(
+                        0,
+                        expandedCards[index] ? content.inclusions.length : 2
+                      )
+                      .map((inclusion, idx) => (
+                        <p key={idx}>
+                          <span>↪</span> {inclusion}
+                        </p>
+                      ))}
+                    <div className="read-more-container">
+                      {content.inclusions.length > 2 && (
+                        <button
+                          className="read-more"
+                          onClick={() => toggleReadMore(index)}
+                        >
+                          {expandedCards[index] ? "Read Less" : "Read More"}
+                        </button>
+                      )}
+                    </div>
+
+                    <p className="price">₹{content.price}</p>
                     <div className="buttons">
-                      <button>Contact Us</button>
                       <button>Enquire Now</button>
+                      <div className="social-buttons">
+                        <button>
+                          <SiWhatsapp className="icon" />
+                        </button>
+                        <button>
+                          <CiPhone className="icon" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -121,6 +293,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Moments />
       <About />
       <ChooseUs />
       <Footer />
