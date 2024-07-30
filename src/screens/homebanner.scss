@@ -10,6 +10,7 @@
     padding-top: 350px;
   }
   .row:last-child {
+    border-bottom: 2px solid var(--color-primary);
     padding-inline: 0;
     flex-direction: column;
     h2 {
@@ -128,11 +129,11 @@
 
 @media screen and (max-width: 768px) {
   .home-banner-container {
-    padding-block: 94px;
+    // padding-block: 94px;
     .row {
       width: 94%;
       padding-inline: 0px;
-      padding-bottom: 0px;
+      // padding-bottom: 0px;
       .left {
         width: 100%;
         h2 {

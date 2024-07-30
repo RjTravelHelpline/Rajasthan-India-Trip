@@ -80,12 +80,12 @@
             font-weight: bold;
             color: black;      
           }
-          p:nth-child(3) {
+          p:nth-child(2) {
             font-family: var(--font-space);
             font-weight: bold;
             text-transform: capitalize;
             color: var(--color-primary);
-            // margin-block: 8px;
+                      margin-bottom: 8px;
           }
 
           p {
