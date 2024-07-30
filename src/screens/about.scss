@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 44px;
+  padding-block: 64px;
   .row {
     width: 88%;
     display: flex;
@@ -11,9 +11,8 @@
     align-items: start;
     gap: 16px;
     flex-wrap: wrap;
-    padding-block: 64px;
     .left {
-      flex: 1 300px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -42,15 +41,60 @@
       }
     }
     .right {
-      flex: 1 400px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
       p {
+        font-size: 1.12em;
+        font-family: var(--font-para);
         span {
           font-weight: bold;
+        }
+      }
+
+
+      // reviews container
+      .reviews-container {
+        display: flex;
+        justify-content: start;
+        gap: 20px;
+        align-items: stretch;
+        flex-wrap: wrap;
+
+        .review-card {
+          padding: 16px;
+          border: 1px solid rgba(0, 0, 0, 0.171);
+          width: 350px;
+          border-radius: 16px;
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: stretch;
+          text-wrap: wrap;
+          h2 {
+            padding: 0;
+            margin-top: 0 !important;
+            font-weight: bold;
+            color: black;      
+          }
+          p:nth-child(3) {
+            font-family: var(--font-space);
+            font-weight: bold;
+            text-transform: capitalize;
+            color: var(--color-primary);
+            // margin-block: 8px;
+          }
+
+          p {
+            font-size: 0.85em;
+          }
+        }
+        .review-card:nth-child(even) {
+          background-color: rgba(192, 192, 192, 0.164);
+          border: none;
         }
       }
     }
@@ -69,6 +113,7 @@
     }
   }
   button {
+    margin-block: 18px;
     width: auto;
     padding: 20px 30px;
     color: var(--color-secondary);
@@ -92,6 +137,13 @@
   .about-container {
     .row {
       width: 94%;
+      .right {
+        .reviews-container {
+          .review-card {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

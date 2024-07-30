@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-block: 44px;
-  background: url("/home-banner-video.mp4") no-repeat center center/cover;
+  padding-top: 128px;
+  background-color: rgba(187, 187, 187, 0.089);
   .row:first-child {
     padding-top: 350px;
   }
@@ -25,14 +25,13 @@
       font-size: clamp(2em, 4vw, 6em);
       font-size: 2em;
       margin-bottom: 16px;
-      // text-align: center;
       span {
         color: var(--color-primary);
       }
     }
     p {
-      // text-align: center;
       line-height: 1.56;
+      font-family: var(--font-para);
       span {
         font-weight: bold;
         text-transform: capitalize;
@@ -107,6 +106,7 @@
       }
       p {
         text-align: center;
+        font-family: var(--font-para);
       }
       h1 {
         width: 100%;
@@ -128,12 +128,11 @@
 
 @media screen and (max-width: 768px) {
   .home-banner-container {
+    padding-block: 94px;
     .row {
       width: 94%;
-
       padding-inline: 0px;
       padding-bottom: 0px;
-
       .left {
         width: 100%;
         h2 {

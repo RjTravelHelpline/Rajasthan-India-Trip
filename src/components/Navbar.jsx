@@ -36,13 +36,9 @@ const Navbar = () => {
               >
                 <CiInstagram className="social-icon" />
               </a>
-              <a
-                href="https://www.instagram.com/rajasthantravelhelpline/"
-                target="_blank"
-              >
-                <CiMail className="social-icon"/>
+              <a href="mailto:mail@rajasthantravelhelpline.com" target="_blank">
+                <CiMail className="social-icon" />
               </a>
-              
             </div>
           </div>
         </div>
@@ -75,14 +71,6 @@ const Navbar = () => {
                 }}
               >
                 Packages
-              </a>
-              <a
-                href="#aboutus"
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                }}
-              >
-                About Us
               </a>
               <a
                 href="#whychooseus"

@@ -14,7 +14,7 @@ const HomeBanner = () => {
             playsInline
             preload="none"
           >
-            <source src="/home-banner-video2.mp4" type="video/mp4" />
+            <source src="/home-banner-video2.mp4" type="video/mp4"/>
           </video>
           <div className="left">
             <h2>Plan Your Dream Vacation Today 🛫</h2>

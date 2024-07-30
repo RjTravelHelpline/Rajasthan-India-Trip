@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 44px;
+  padding-block: 64px;
   .row {
     width: 88%;
     h2 {
@@ -19,12 +19,13 @@
       margin-bottom: 28px;
       font-size: clamp(2em, 4vw, 6em);
     }
+
     .tour-cards {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-start;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
       .card-row {
         width: 100%;
@@ -41,14 +42,15 @@
       }
       .card {
         width: 380px;
+        // max-width: 500px;
         border: 1px solid #9b9b9b70;
         border-radius: 24px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 12px;
-        flex-grow: 1;
+        flex-grow: 1 400px;
         transition: all 0.3s ease-in-out;
         p:nth-child(2):not(.card-details p) {
           background-color: var(--color-secondary);
@@ -175,8 +177,10 @@
               }
               button:nth-child(2) {
                 background-color: black;
-                color: white;
                 border-radius: 0 16px 16px 0;
+                a {
+                  color: white !important;
+                }
               }
             }
           }
@@ -218,6 +222,7 @@
       .tour-cards {
         .card {
           width: 100%;
+          flex-grow: 1;
         }
       }
     }

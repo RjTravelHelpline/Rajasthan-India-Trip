@@ -1,14 +1,16 @@
-import React from "react";
+import {React, useEffect}from "react";
 import "./privacy.scss";
-import { useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Privacy = () => {
-    const navigate = useNavigate()
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <>
       <div className="privacy-container">
         <div className="row">
-        <button onClick={()=> {navigate('/')}}>Go Back →</button>
+        <button><Link to='/'>Go Back →</Link></button>
           <h2>Privacy Policy</h2>
           <h1>How We Use Your Information</h1>
           <div className="privacy-details">

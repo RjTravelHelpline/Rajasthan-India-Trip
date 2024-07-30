@@ -13,32 +13,39 @@ const Footer = () => {
       <div className="footer-container" id="contact">
         <div className="row">
           <div className="footer-card">
-            {/* <h2>Rajasthan Tour Packages</h2> */}
-            <img src="/RTH-logo.jpg" alt="RTH-Logo" />
+            <h2>About Us</h2>
+            <p>
+            Rajasthan is one of India's leading tourist places, boasting
+              magnificent forts and glorious royal palaces, which reverberate
+              the sages of victory. Mouthwatering dishes, colorful culture,
+              exquisite handicrafts, and architectural wonders are regarded as a
+              few of the reasons why people love to choose our{" "}
+              Rajasthan tour packages.
+            </p>
+            <div className="row"><Link to="/privacy" className="pages">Privacy Policy</Link>
+            <Link to="/terms" className="pages">Terms & Conditions</Link></div>
+            
           </div>
           <div className="footer-card">
-            <h2>About</h2>
-            <p>
-              We at <span>Rajasthan Travel Helpline</span> believe in offering
-              only high-quality and professional assistance. Our team is working
-              24/7 just for your convenience. Our aim is to make your travel
-              journey the best moment of your life. As you know that Rajasthan
-              is the home of different thrilling adventures. You can go for a
-              ride on the hot air balloon in different places, such as
-              Ranthambore, Pushkar, and Jaipur, and sail across the Rajasthani
-              sky.
-            </p>
+            <h2>Approved by</h2>
+            <img src="/rth-approved-logo.webp" alt="RTH-Logo" />
           </div>
           <div className="footer-card">
             <h2>Contact Us</h2>
+            <img src="/rth-logo.png" alt="RTH-Logo" />
+            <p>Rajasthan Travel Helpline</p>
             <p>
-              B-59 Sikar House, Behind Shiv Mandir,Jaipur-302016
+              G-18, City Plaza, Jhotwara road, Bani park, Jaipur-16
               Rajasthan(India)
             </p>
-            <a href="tel:+1234567890"></a>
-            <p>📞+91-5252525252</p>
-            <a href="tel:+1234567890"></a>
-            <p>📞+91-5252525252</p>
+            <a href="tel:8107191919">
+
+            <p>📞+91-8107191919</p>
+            </a>
+            <a href="tel:9024337038">
+
+            <p>📞+91-9024337038</p>
+            </a>
             <div className="social-icons">
               <a href="https://www.facebook.com/rajasthantravelhelpline/">
                 <CiFacebook className="icon" />
@@ -46,15 +53,14 @@ const Footer = () => {
               <a href="https://www.instagram.com/rajasthantravelhelpline/">
                 <CiInstagram className="icon" />
               </a>
-              <a href="">
+              <a href="mailto:mail@rajasthantravelhelpline.com">
                 <CiMail className="icon" />
               </a>
             </div>
           </div>
         </div>
         <div className="row">
-          <Link to="/privacy">Privacy Policy</Link>
-          <Link to="/terms">Terms & Conditions</Link>
+         
         </div>
       </div>
     </>

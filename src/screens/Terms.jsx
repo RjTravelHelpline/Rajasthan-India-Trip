@@ -1,14 +1,16 @@
-import React from "react";
+import {React, useEffect}from "react";
 import "./terms.scss";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Terms = () => {
-    const navigate = useNavigate()
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="terms-container">
         <div className="row">
-            <button onClick={()=> {navigate('/')}}>Go Back →</button>
+        <button><Link to='/'>Go Back →</Link></button>
           <h2>Terms and Conditions</h2>
           <h1>Introduction and Acceptance of Terms</h1>
           <div className="terms-details">

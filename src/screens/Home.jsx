@@ -1,22 +1,18 @@
 import { React, useState } from "react";
 import "./home.scss";
-import cardImg from "/card-img01.webp";
 import Footer from "../components/Footer";
 import StickyFooter from "../components/Sticky-footer";
 import ChooseUs from "./ChooseUs";
 import About from "./About";
 import HomeBanner from "./HomeBanner";
 import { GoHomeFill } from "react-icons/go";
-
 import { GiHotMeal } from "react-icons/gi";
 import { FaHotel } from "react-icons/fa6";
-
-import { MdDirectionsTransit } from "react-icons/md";
+import { FaCar } from "react-icons/fa";
 import Moments from "./Moments";
 import { SiWhatsapp } from "react-icons/si";
 import { CiPhone } from "react-icons/ci";
-import Privacy from "./Privacy";
-import Terms from "./Terms";
+import EnquiryForm from "../components/EnquiryForm";
 
 const Home = () => {
   const [expandedCards, setExpandedCards] = useState({});
@@ -226,23 +222,50 @@ const Home = () => {
       ],
       price: "6499/-",
     },
+    {
+      title: "03 Days Jaipur Package Tour",
+      coveredPlaces: "02 Nights / 03 Days",
+      image: "/jaipur-jaipur.webp",
+      PlacesCovered: "Jaipur",
+      inclusions: [
+        "Welcome Drink on Arrival",
+        "Morning Tea",
+        "Daily Breakfast & Dinner",
+        "01 Jungle Ride by Gypsy (Jhalana Leopard Reserve)",
+        "Exclusive Air-Conditioned Vehicle",
+        "Parkings & Driver Allowance",
+        "Local Guide Services during Sightseeing",
+        "Packaged Drinking Water Bottles during Travel",
+        "Farewell Gift on Departure",
+        "Child below 5 years is complimentary",
+        "All Taxes",
+      ],
+      price: "7199/-",
+    },
   ];
+  const generateWhatsAppLink = (card) => {
+    const message = `Hello, I would like to know more about ${card.title} Package`;
+    return `https://api.whatsapp.com/send?phone=919166555888&text=${encodeURIComponent(
+      message
+    )}`;
+  };
+
   return (
     <>
       <HomeBanner />
       <div className="home-container" id="packages">
         <div className="row">
           <h2>featured tours</h2>
-          <h1>the most favorite tour place</h1>
+          <h1>best selling tour packages</h1>
           <div className="tour-cards">
             {cardContents.map((content, index) => (
               <div className="card" key={index}>
                 <div className="card-image">
-                  <img src={content.image} alt="card-image" />
+                  <img src={content.image} alt="Package-image" title={`${content.title}`} />
                   <p>Featured ♥</p>
                   <div className="card-icons">
                     <GiHotMeal className="icon" />
-                    <MdDirectionsTransit className="icon" />
+                    <FaCar className="icon" />
                     <FaHotel className="icon" />
                     <GoHomeFill className="icon" />
                   </div>
@@ -276,13 +299,27 @@ const Home = () => {
 
                     <p className="price">₹{content.price}</p>
                     <div className="buttons">
-                      <button>Enquire Now</button>
+                      <button>
+                        {" "}
+                        <a href="https://api.whatsapp.com/send?phone=919166555888">
+                          Enquire Now
+                        </a>
+                      </button>
+
                       <div className="social-buttons">
                         <button>
-                          <SiWhatsapp className="icon" />
+                          <a
+                            href={generateWhatsAppLink(content)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <SiWhatsapp className="icon" />
+                          </a>
                         </button>
                         <button>
-                          <CiPhone className="icon" />
+                          <a href="tel:8107191919">
+                            <CiPhone className="icon" />
+                          </a>
                         </button>
                       </div>
                     </div>

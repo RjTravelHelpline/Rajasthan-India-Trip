@@ -1,8 +1,9 @@
 .moments-container {
-  padding-block: 44px;
+  padding-block: 128px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.075);
   .row {
     width: 88%;
     display: flex;
@@ -45,6 +46,7 @@
 
 @media screen and (max-width:768px){
   .moments-container {
+    padding-block: 64px;
     .row {
       width: 94%;
       .moments-gallery {

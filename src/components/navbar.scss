@@ -1,6 +1,6 @@
 .nav-container {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 99;
   box-shadow: 0 24px 44px #79797931;
@@ -84,6 +84,13 @@
 @media screen and (max-width: 768px) {
   .nav-container {
     padding-block: 0px;
+    .row{
+      .left {
+        h2 {
+          font-size: 1.25em;
+        }
+      }
+    }
     .upper-nav {
       display: none;
     }
