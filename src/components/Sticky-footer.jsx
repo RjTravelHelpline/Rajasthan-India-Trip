@@ -11,10 +11,9 @@ const StickyFooter = () => {
               <img src="/telephone.png" alt="telephone" />
             </a>
           </div>
-
           <div className="icon-container">
             <a
-              href="https://api.whatsapp.com/send?phone=919166555888
+              href="https://api.whatsapp.com/send?phone=919414047940
 "
             >
               <img src="/whatsapp.png" alt="whatsapp" />

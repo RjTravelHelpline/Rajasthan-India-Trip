@@ -1,3 +1,65 @@
+.swiper {
+  z-index: 0 !important;
+}
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    background-color: var(--color-primary);
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  border-radius: 9999px;
+  border: 1px solid black;
+  color: var(--color-primary);
+  font-size: 2em !important;
+  background-color: black;
+  padding: 16px;
+  color: var(--color-primary) !important;
+}
+
+.swiper-slider {
+  margin: 0 auto;
+  width: 20em;
+  height: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 64px;
+  border-radius: 24px;
+  padding: 44px;
+  gap: 12px;
+  img {
+    width: 100%;
+    background-color: red !important;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+}
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+.slider-controler {
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  // bottom: 2em;
+  .slider-arrow {
+    background-color: var(--color-secondary);
+    border: none;
+    width: 1.5em;
+    height: 1.5em;
+    .icon {
+      font-size: 1em !important;
+    }
+  }
+  .slider-arrow::after {
+    content: "";
+  }
+}
+
 .moments-container {
   padding-block: 128px;
   display: flex;
@@ -28,15 +90,9 @@
     .moments-gallery {
       width: 100%;
       display: flex;
-      overflow: scroll;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 4px;
       border-radius: 24px;
-      
-      img {
-        width: 100%;
-      }
     }
     ::-webkit-scrollbar {
       display: none;
@@ -44,17 +100,30 @@
   }
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px) {
+  .swiper-slider {
+    width: 24em;
+    height: 24em;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    border-radius: 9999px;
+    border: 1px solid black;
+    color: var(--color-primary);
+    font-size: 1.2em !important;
+    background-color: black;
+    padding: 8px;
+    color: var(--color-primary) !important;
+  }
   .moments-container {
     padding-block: 64px;
     .row {
       width: 94%;
       .moments-gallery {
-        img{
+        img {
           width: 100%;
         }
       }
     }
   }
-  
 }

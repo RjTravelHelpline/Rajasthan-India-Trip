@@ -129,11 +129,14 @@
 
 @media screen and (max-width: 768px) {
   .home-banner-container {
-    // padding-block: 94px;
+    padding-block: 94px;
+    padding-bottom: 0px;
+    .row:first-child {
+      padding-bottom: 0;
+    }
     .row {
       width: 94%;
       padding-inline: 0px;
-      // padding-bottom: 0px;
       .left {
         width: 100%;
         h2 {

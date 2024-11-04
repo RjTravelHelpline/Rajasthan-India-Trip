@@ -1,27 +1,35 @@
 .sticky-footer-container {
   display: none;
-  width: 100%;
+  width: 300px;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  bottom: 0;
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
   background-color: var(--color-secondary);
-  padding-block: 16px;
-  box-shadow: 0 -24px 44px #79797931;
+  padding: 16px 20px;
+  box-shadow: 0 -24px 44px #79797923;
+  border: 1px solid rgba(71, 71, 71, 0.274);
+  border-radius: 999px;
+  background-color: #d6d6d646;
+  backdrop-filter: blur(20px);
   .row {
-    width: 94%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    padding-inline: 12px;
+
     align-items: center;
-    gap: 8px;
+    gap: 20px;
 
     .icon-container {
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 999px;
       img {
-        width: 2.4em;
+        width: 2em;
       }
     }
     p:hover {

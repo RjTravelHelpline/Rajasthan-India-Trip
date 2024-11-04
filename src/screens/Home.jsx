@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, memo } from "react";
 import "./home.scss";
 import Footer from "../components/Footer";
 import StickyFooter from "../components/Sticky-footer";
@@ -16,6 +16,7 @@ import EnquiryForm from "../components/EnquiryForm";
 
 const Home = () => {
   const [expandedCards, setExpandedCards] = useState({});
+  const MemoizedEnquiryForm = memo(EnquiryForm);
 
   const toggleReadMore = (index) => {
     setExpandedCards((prev) => ({
@@ -250,8 +251,19 @@ const Home = () => {
     )}`;
   };
 
+  // const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+
+  // const handleShowForm = (card) => {
+  //   setShowEnquiryForm(true);
+  // };
+
+  // const handleCloseForm = () => {
+  //   setShowEnquiryForm(false);
+  // };
+
   return (
     <>
+      {/* {showEnquiryForm && <MemoizedEnquiryForm handleClose={handleCloseForm} />} */}
       <HomeBanner />
       <div className="home-container" id="packages">
         <div className="row">
@@ -261,7 +273,11 @@ const Home = () => {
             {cardContents.map((content, index) => (
               <div className="card" key={index}>
                 <div className="card-image">
-                  <img src={content.image} alt="Package-image" title={`${content.title}`} />
+                  <img
+                    src={content.image}
+                    alt="Package-image"
+                    title={`${content.title}`}
+                  />
                   <p>Featured ♥</p>
                   <div className="card-icons">
                     <GiHotMeal className="icon" />
@@ -299,13 +315,9 @@ const Home = () => {
 
                     <p className="price">₹{content.price}</p>
                     <div className="buttons">
-                      <button>
-                        {" "}
-                        <a href="https://api.whatsapp.com/send?phone=919166555888">
-                          Enquire Now
-                        </a>
-                      </button>
-
+                      <a href="#enquiry">
+                        <button>Enquire Now</button>
+                      </a>
                       <div className="social-buttons">
                         <button>
                           <a
@@ -317,7 +329,7 @@ const Home = () => {
                           </a>
                         </button>
                         <button>
-                          <a href="tel:8107191919">
+                          <a href="tel:8107191919" target="_blank">
                             <CiPhone className="icon" />
                           </a>
                         </button>
@@ -333,6 +345,7 @@ const Home = () => {
       <Moments />
       <About />
       <ChooseUs />
+      <EnquiryForm />
       <Footer />
       <StickyFooter />
     </>

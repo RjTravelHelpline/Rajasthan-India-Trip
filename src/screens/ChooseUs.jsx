@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import "./choose.scss";
 import homeImage from "/home-img.jpg";
 import { BsBoxFill } from "react-icons/bs";
@@ -6,15 +6,15 @@ import { BiSolidConfused } from "react-icons/bi";
 import EnquiryForm from "../components/EnquiryForm";
 
 const ChooseUs = () => {
-   // enquiry form
-   const [showEnquiryForm, setShowEnquiryForm] = useState(false);
+  // enquiry form
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
 
-   const handleShowForm = () => {
-     setShowEnquiryForm(true);
-   };
-   const handleCloseForm = () => {
-     setShowEnquiryForm(false);
-   };
+  const handleShowForm = () => {
+    setShowEnquiryForm(true);
+  };
+  const handleCloseForm = () => {
+    setShowEnquiryForm(false);
+  };
   return (
     <>
       <div className="chooseus-container" id="whychooseus">
@@ -67,8 +67,12 @@ const ChooseUs = () => {
             <h1>Are you still confused?</h1>
             <h2>Book your Trip with Rajasthan Tour Expert.</h2>
             <div className="button-container">
-              <button onClick={handleShowForm}>Let us know your requirements →</button>
-              {showEnquiryForm && <EnquiryForm handleClose={handleCloseForm}/>}
+                <a href="#enquiry">
+              <button onClick={handleShowForm}>
+              Let us know your requirements →
+              </button>
+              </a>
+              {/* {showEnquiryForm && <EnquiryForm handleClose={handleCloseForm}/>} */}
             </div>
           </div>
         </div>
