@@ -346,7 +346,6 @@ const Home = () => {
       <About />
       <ChooseUs />
       <EnquiryForm />
-      <Footer />
       <StickyFooter />
     </>
   );

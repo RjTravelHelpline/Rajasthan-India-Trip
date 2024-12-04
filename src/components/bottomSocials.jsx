@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 const WhatsAppIcon = () => {
     const handleClick = () => {
         // Replace with your WhatsApp number or link
-        window.open('https://api.whatsapp.com/send?phone=919414047940', '_blank');
+        window.open('https://api.whatsapp.com/send?phone=919024337038', '_blank');
     };
 
     return (

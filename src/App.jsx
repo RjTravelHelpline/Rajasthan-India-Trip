@@ -1,9 +1,10 @@
-import React from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./screens/Home";
 import Privacy from "./screens/Privacy";
 import Terms from "./screens/Terms";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -11,10 +12,11 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms-and-conditions" element={<Terms />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

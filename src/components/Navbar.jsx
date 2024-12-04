@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="upper-nav">
           <div className="row">
             <p>
-              <span>Locate: </span>
+              <span>Address: </span>
               B-59 Sikar House, Behind Shiv Mandir,Jaipur-302016
               Rajasthan(India)
             </p>
@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
         <div className="row">
           <div className="left">
-            <a to="/">
+            <a href="/">
               <h2>
                 Rajasthan <span>Tour Packages</span>{" "}
               </h2>{" "}

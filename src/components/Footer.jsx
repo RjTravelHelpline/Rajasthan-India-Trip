@@ -1,4 +1,3 @@
-
 import "./footer.scss";
 import { CiFacebook } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
@@ -24,8 +23,8 @@ const Footer = () => {
               few of the reasons why people love to choose our{" "}
               Rajasthan tour packages.
             </p>
-            <div className="row"><Link to="/privacy" className="pages">Privacy Policy</Link>
-              <Link to="/terms" className="pages">Terms & Conditions</Link></div>
+            <div className="row"><Link to="/privacy-policy" className="pages">Privacy Policy</Link>
+              <Link to="/terms-and-conditions" className="pages">Terms & Conditions</Link></div>
 
           </div>
           <div className="footer-card">
