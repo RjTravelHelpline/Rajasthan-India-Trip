@@ -25,7 +25,7 @@ const EnquiryForm = ({ handleClose }) => {
     if (res.success) {
       Swal.fire({
         title: "Thankyou! Your Query has been submitted successfully",
-        text: "For quick assistance, call or whatsapp on +91-9166-555-888 (Mr. Harsh)",
+        text: "For quick assistance, call or whatsapp on +91-9024337038 (Mr. Harsh)",
         icon: "success",
         customClass: {
           popup: "alert-popup",

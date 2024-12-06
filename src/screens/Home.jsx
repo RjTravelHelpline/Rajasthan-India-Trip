@@ -246,7 +246,7 @@ const Home = () => {
   ];
   const generateWhatsAppLink = (card) => {
     const message = `Hello, I would like to know more about ${card.title} Package`;
-    return `https://api.whatsapp.com/send?phone=919166555888&text=${encodeURIComponent(
+    return `https://api.whatsapp.com/send?phone=919024337038&text=${encodeURIComponent(
       message
     )}`;
   };
@@ -329,7 +329,7 @@ const Home = () => {
                           </a>
                         </button>
                         <button>
-                          <a href="tel:8107191919" target="_blank">
+                          <a href="tel:+91-9024337038" target="_blank">
                             <CiPhone className="icon" />
                           </a>
                         </button>
