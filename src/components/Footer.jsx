@@ -29,7 +29,15 @@ const Footer = () => {
           </div>
           <div className="footer-card">
             <h2>Approved by</h2>
-            <img src="/rth-approved-logo.webp" alt="RTH-Logo" />
+            <div className="logo-container">
+              <a href="https://www.tourism.rajasthan.gov.in/">
+                <img src="/rth-approved-logo.jpg" alt="RTH-Logo" />
+              </a>
+              <a href="https://frto.org/">
+                <img src="/frto-logo.webp" alt="FRTO-Logo" />
+              </a>
+
+            </div>
           </div>
           <div className="footer-card">
             <h2>Contact Us</h2>
@@ -39,22 +47,22 @@ const Footer = () => {
               G-18, City Plaza, Jhotwara road, Bani park, Jaipur-16
               Rajasthan(India)
             </p>
-            <a href="tel:8107191919">
-
-              <p>📞+91-8107191919</p>
-            </a>
-            <a href="tel:9024337038">
+            <a href="tel:9024337038" target="_blank">
 
               <p>📞+91-9024337038</p>
             </a>
+            <a href="tel:8107191919" target="_blank">
+
+              <p>📞+91-8107191919</p>
+            </a>
             <div className="social-icons">
-              <a href="https://www.facebook.com/rajasthantravelhelpline/">
+              <a href="https://www.facebook.com/rajasthantravelhelpline/" target="_blank">
                 <CiFacebook className="icon" />
               </a>
-              <a href="https://www.instagram.com/rajasthantravelhelpline/">
+              <a href="https://www.instagram.com/rajasthantravelhelpline/" target="_blank">
                 <CiInstagram className="icon" />
               </a>
-              <a href="mailto:mail@rajasthantravelhelpline.com">
+              <a href="mailto:mail@rajasthantravelhelpline.com" target="_blank">
                 <CiMail className="icon" />
               </a>
             </div>

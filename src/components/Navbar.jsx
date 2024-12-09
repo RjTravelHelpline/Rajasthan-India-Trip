@@ -19,8 +19,7 @@ const Navbar = () => {
           <div className="row">
             <p>
               <span>Address: </span>
-              B-59 Sikar House, Behind Shiv Mandir,Jaipur-302016
-              Rajasthan(India)
+              G-18, City Plaza Bani Park, Jaipur - 302016 (Rajasthan, India)
             </p>
             <div className="icons">
               <a

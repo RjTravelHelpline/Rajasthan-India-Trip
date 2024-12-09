@@ -170,3 +170,43 @@
     }
   }
 }
+
+.trip-advisor-container {
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-block: 12px;
+  img {
+    width: 8em;
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  gap: 8px;
+  a {
+    width: 100% !important;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    @media screen and (max-width: 768px) {
+      height: 100px;
+      display: flex;
+      justify-content: start;
+      align-items: stretch;
+      margin-bottom: 44px !important;
+        width: 10em !important;
+    }
+    img {
+      height: 100% !important;
+      width: 100% !important;
+      object-fit: cover;
+     
+    }
+  }
+}

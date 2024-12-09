@@ -311,9 +311,7 @@ const Home = () => {
                           {expandedCards[index] ? "Read Less" : "Read More"}
                         </button>
                       )}
-                    </div>
-
-                    <p className="price">₹{content.price}</p>
+                    </div><p className="price">₹{content.price}</p>
                     <div className="buttons">
                       <a href="#enquiry">
                         <button>Enquire Now</button>

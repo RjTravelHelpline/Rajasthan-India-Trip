@@ -40,41 +40,94 @@ const Moments = () => {
               modules={[EffectCoverflow, Pagination, Navigation]}
             >
               <SwiperSlide className="swiper-slider">
-                <img
-                  src="/WhatsAppImage4.jpeg"
-                  alt="Moments Images"
-                  title="Moment3"
-                />
+                <div className="image-container">
+                  <img
+                    src="/tour-jaisalmer-01.jfif"
+                    alt="Moments Images"
+                    title="Moment3"
+                  />
+                </div>
               </SwiperSlide>
               <SwiperSlide className="swiper-slider">
-                <img
-                  src="/WhatsAppImage6.jpeg"
-                  alt="Moments Images"
-                  title="Moment5"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slider">
-                <img
-                  src="/WhatsAppImage5.jpeg"
-                  alt="Moments Images"
-                  title="Moment4"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slider">
-                <img
-                  src="/WhatsAppImage3.jpeg"
-                  alt="Moments Images"
-                  title="Moment2"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slider">
-                <img
-                  src="/WhatsAppImage7.jpeg"
-                  alt="Moments Images"
-                  title="Moment6"
-                />
-              </SwiperSlide>
+                <div className="image-container">
 
+                  <img
+                    src="/tour-jaisalmer-02.jfif"
+                    alt="Moments Images"
+                    title="Moment3"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/tour-jaisalmer-03.jfif"
+                    alt="Moments Images"
+                    title="Moment3"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/tour-jaisalmer-04.jfif"
+                    alt="Moments Images"
+                    title="Moment3"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/customer-nitin.webp"
+                    alt="Moments Images"
+                    title="Moment3"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/WhatsAppImage6.jpeg"
+                    alt="Moments Images"
+                    title="Moment5"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/WhatsAppImage5.jpeg"
+                    alt="Moments Images"
+                    title="Moment4"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/WhatsAppImage3.jpeg"
+                    alt="Moments Images"
+                    title="Moment2"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slider">
+                <div className="image-container">
+
+                  <img
+                    src="/WhatsAppImage7.jpeg"
+                    alt="Moments Images"
+                    title="Moment6"
+                  />
+                </div>
+              </SwiperSlide>
               <div className="slider-controler">
                 <div className="swiper-button-prev slider-arrow">
                   <AiOutlineLeft className="icon" />

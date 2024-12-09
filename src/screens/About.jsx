@@ -61,6 +61,7 @@ const About = () => {
             {reviews.map((review, index) => (
               <div className="review-card" key={index}>
                 <h2>{review.name}</h2>
+
                 <div className="rates">
                   <img src="/rate.png" alt="rate star" title="Star Rating" />
                   <img src="/rate.png" alt="rate star" title="Star Rating" />
@@ -74,12 +75,21 @@ const About = () => {
 
             {/* </Swiper> */}
           </div>
+
+          
+          <div className="w-100 trip-advisor-container">
           <a href="#enquiry">
             <button>
               Explore Now
               <BsArrowRight className="icon" />
             </button>
           </a>
+            <a href="https://www.tripadvisor.in/Attraction_Review-g304555-d24123312-Reviews-Rajasthan_Travel_Helpline-Jaipur_Jaipur_District_Rajasthan.html">
+              <div className="image-container">
+                <img src="tripadvisor-logo.webp" alt="trip advisor" />
+              </div>
+            </a>
+          </div>
           {/* {showEnquiryForm && <EnquiryForm handleClose={handleCloseForm} />} */}
         </div>
       </div>
