@@ -1,22 +1,21 @@
 import "./footer.scss";
-import { CiFacebook } from "react-icons/ci";
-import { CiMail } from "react-icons/ci";
-import { CiInstagram } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import WhatsAppIcon from "./bottomSocials";
+import { RiFacebookFill, RiInstagramFill, RiMailFill } from "react-icons/ri";
 
 const Footer = () => {
   const date = new Date()
   const mydate = date.getFullYear()
   return (
     <>
+      {/* <div className="container"> */}
       <WhatsAppIcon />
       <div className="footer-container" id="contact">
-        <div className="row">
+        <div className="row container">
           <div className="footer-card">
             <h2>About Us</h2>
             <p>
-              Rajasthan is one of India's leading tourist places, boasting
+              Rajasthan is one of India&apos;s leading tourist places, boasting
               magnificent forts and glorious royal palaces, which reverberate
               the sages of victory. Mouthwatering dishes, colorful culture,
               exquisite handicrafts, and architectural wonders are regarded as a
@@ -25,18 +24,16 @@ const Footer = () => {
             </p>
             <div className="row"><Link to="/privacy-policy" className="pages">Privacy Policy</Link>
               <Link to="/terms-and-conditions" className="pages">Terms & Conditions</Link></div>
-
           </div>
           <div className="footer-card">
             <h2>Approved by</h2>
             <div className="logo-container">
-              <a href="https://www.tourism.rajasthan.gov.in/">
+              <a href="https://www.tourism.rajasthan.gov.in/" target="_blank">
                 <img src="/rth-approved-logo.jpg" alt="RTH-Logo" />
               </a>
-              <a href="https://frto.org/">
+              <a href="https://frto.org/" target="_blank" >
                 <img src="/frto-logo.webp" alt="FRTO-Logo" />
               </a>
-
             </div>
           </div>
           <div className="footer-card">
@@ -57,21 +54,22 @@ const Footer = () => {
             </a>
             <div className="social-icons">
               <a href="https://www.facebook.com/rajasthantravelhelpline/" target="_blank">
-                <CiFacebook className="icon" />
+                <RiFacebookFill className="icon" />
               </a>
               <a href="https://www.instagram.com/rajasthantravelhelpline/" target="_blank">
-                <CiInstagram className="icon" />
+                <RiInstagramFill className="icon" />
               </a>
               <a href="mailto:mail@rajasthantravelhelpline.com" target="_blank">
-                <CiMail className="icon" />
+                <RiMailFill className="icon" />
               </a>
             </div>
           </div>
         </div>
         <div className="row">
-          <p>copyright @ {mydate} <span>RajasthanTravelHelpline</span> | All Rights Reserverd.</p>
+          <p>© {mydate} <span>RajasthanTravelHelpline</span> | All Rights Reserverd.</p>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };

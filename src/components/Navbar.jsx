@@ -1,10 +1,10 @@
 import { useState } from "react";
-import React from "react";
 import "./navbar.scss";
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { CiMail } from "react-icons/ci";
 import { MdClearAll } from "react-icons/md";
+import { RiFacebookFill, RiInstagramFill, RiMailFill } from "react-icons/ri";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +16,8 @@ const Navbar = () => {
     <>
       <div className="nav-container">
         <div className="upper-nav">
-          <div className="row">
-            <p>
+          <div className="row container">
+            <p className="address">
               <span>Address: </span>
               G-18, City Plaza Bani Park, Jaipur - 302016 (Rajasthan, India)
             </p>
@@ -26,22 +26,22 @@ const Navbar = () => {
                 href="https://www.facebook.com/rajasthantravelhelpline/"
                 target="_blank"
               >
-                <CiFacebook className="social-icon" />
+                <RiFacebookFill className="social-icon" />
               </a>
 
               <a
                 href="https://www.instagram.com/rajasthantravelhelpline/"
                 target="_blank"
               >
-                <CiInstagram className="social-icon" />
+                <RiInstagramFill className="social-icon" />
               </a>
               <a href="mailto:mail@rajasthantravelhelpline.com" target="_blank">
-                <CiMail className="social-icon" />
+                <RiMailFill className="social-icon" />
               </a>
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row container">
           <div className="left">
             <a href="/">
               <h2>

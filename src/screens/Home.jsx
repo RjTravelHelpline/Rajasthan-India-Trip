@@ -1,6 +1,5 @@
-import { React, useState, memo } from "react";
+import { useState } from "react";
 import "./home.scss";
-import Footer from "../components/Footer";
 import StickyFooter from "../components/Sticky-footer";
 import ChooseUs from "./ChooseUs";
 import About from "./About";
@@ -12,11 +11,11 @@ import { FaCar } from "react-icons/fa";
 import Moments from "./Moments";
 import { SiWhatsapp } from "react-icons/si";
 import { CiPhone } from "react-icons/ci";
+
 import EnquiryForm from "../components/EnquiryForm";
 
 const Home = () => {
   const [expandedCards, setExpandedCards] = useState({});
-  const MemoizedEnquiryForm = memo(EnquiryForm);
 
   const toggleReadMore = (index) => {
     setExpandedCards((prev) => ({
@@ -251,100 +250,93 @@ const Home = () => {
     )}`;
   };
 
-  // const [showEnquiryForm, setShowEnquiryForm] = useState(false);
-
-  // const handleShowForm = (card) => {
-  //   setShowEnquiryForm(true);
-  // };
-
-  // const handleCloseForm = () => {
-  //   setShowEnquiryForm(false);
-  // };
 
   return (
     <>
-      {/* {showEnquiryForm && <MemoizedEnquiryForm handleClose={handleCloseForm} />} */}
-      <HomeBanner />
-      <div className="home-container" id="packages">
-        <div className="row">
-          <h2>featured tours</h2>
-          <h1>best selling tour packages</h1>
-          <div className="tour-cards">
-            {cardContents.map((content, index) => (
-              <div className="card" key={index}>
-                <div className="card-image">
-                  <img
-                    src={content.image}
-                    alt="Package-image"
-                    title={`${content.title}`}
-                  />
-                  <p>Featured ♥</p>
-                  <div className="card-icons">
-                    <GiHotMeal className="icon" />
-                    <FaCar className="icon" />
-                    <FaHotel className="icon" />
-                    <GoHomeFill className="icon" />
+      <div className="container">
+        <HomeBanner />
+        <div className="home-container" id="packages">
+          <div className="row">
+            <h2>featured tours</h2>
+            <h1>best selling tour packages</h1>
+            <div className="tour-cards">
+              {cardContents.map((content, index) => (
+                <div className="card" key={index}>
+                  <div className="card-image">
+                    <img
+                      src={content.image}
+                      alt="Package-image"
+                      title={`${content.title}`}
+                    />
+                    <p>Featured ♥</p>
+                    <div className="card-icons">
+                      <GiHotMeal className="icon" />
+                      <FaCar className="icon" />
+                      <FaHotel className="icon" />
+                      <GoHomeFill className="icon" />
+                    </div>
                   </div>
-                </div>
-                <div className="card-row">
-                  <p>{content.coveredPlaces}</p>
-                  <h1>{content.title}</h1>
-                  <p>{content.PlacesCovered}</p>
-                  <div className="card-details">
-                    <h2>Package Inclusion</h2>
-                    {content.inclusions
-                      .slice(
-                        0,
-                        expandedCards[index] ? content.inclusions.length : 2
-                      )
-                      .map((inclusion, idx) => (
-                        <p key={idx}>
-                          <span>↪</span> {inclusion}
-                        </p>
-                      ))}
-                    <div className="read-more-container">
-                      {content.inclusions.length > 2 && (
-                        <button
-                          className="read-more"
-                          onClick={() => toggleReadMore(index)}
-                        >
-                          {expandedCards[index] ? "Read Less" : "Read More"}
-                        </button>
-                      )}
-                    </div><p className="price">₹{content.price}</p>
-                    <div className="buttons">
-                      <a href="#enquiry">
-                        <button>Enquire Now</button>
-                      </a>
-                      <div className="social-buttons">
-                        <button>
-                          <a
-                            href={generateWhatsAppLink(content)}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                  <div className="card-row">
+                    <p>{content.coveredPlaces}</p>
+                    <h1>{content.title}</h1>
+                    <p>{content.PlacesCovered}</p>
+                    <div className="card-details">
+                      <h2>Package Inclusion</h2>
+                      {content.inclusions
+                        .slice(
+                          0,
+                          expandedCards[index] ? content.inclusions.length : 2
+                        )
+                        .map((inclusion, idx) => (
+                          <p key={idx}>
+                            <span>↪</span> {inclusion}
+                          </p>
+                        ))}
+                      <div className="read-more-container">
+                        {content.inclusions.length > 2 && (
+                          <button
+                            className="read-more"
+                            onClick={() => toggleReadMore(index)}
                           >
-                            <SiWhatsapp className="icon" />
-                          </a>
-                        </button>
-                        <button>
-                          <a href="tel:+91-9024337038" target="_blank">
-                            <CiPhone className="icon" />
-                          </a>
-                        </button>
+                            {expandedCards[index] ? "Read Less" : "Read More"}
+                          </button>
+                        )}
+                      </div><p className="price">₹{content.price}</p>
+                      <div className="buttons">
+                        <a href="#enquiry">
+                          <button>Enquire Now</button>
+                        </a>
+                        <div className="social-buttons">
+                          <button>
+                            <a
+                              href={generateWhatsAppLink(content)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <SiWhatsapp className="icon" />
+                            </a>
+                          </button>
+                          <button>
+                            <a href="tel:+91-9024337038" target="_blank">
+                              <CiPhone className="icon" />
+                            </a>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+        <Moments />
+        <About />
+        <ChooseUs />
+        <EnquiryForm />
+        <StickyFooter />
       </div>
-      <Moments />
-      <About />
-      <ChooseUs />
-      <EnquiryForm />
-      <StickyFooter />
+
     </>
   );
 };

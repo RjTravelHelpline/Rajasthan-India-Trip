@@ -95,7 +95,8 @@
     }
 
     input,
-    textarea {
+    textarea,
+    select {
       padding: 16px;
       border-radius: 16px;
       outline: none;
@@ -143,4 +144,15 @@
       width: 94%;
     }
   }
+}
+
+.submit-button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &.disabled {
+    background-color: #c0c0c0; /* Disabled color */
+    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+  }
+
 }
