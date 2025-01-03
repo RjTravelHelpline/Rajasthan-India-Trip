@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./enquiry.scss";
-import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2";
 
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ const EnquiryForm = () => {
   });
 
   const [isFormValid, setIsFormValid] = useState(false);
+  const [loading, setLoading] = useState(false); // State for loader
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +27,6 @@ const EnquiryForm = () => {
   };
 
   const validateForm = (data) => {
-    // Check if all required fields have values
     const isValid =
       data.name &&
       data.email &&
@@ -40,30 +40,61 @@ const EnquiryForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const object = Object.fromEntries(new FormData(event.target));
+    setLoading(true); // Start loader
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "ce28983c-47b8-4e3a-a8fe-44b1ba960c39");
+
+    const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
-
-    if (res.success) {
-      Swal.fire({
-        title: "Thank you! Your Query has been submitted successfully",
-        text: "For quick assistance, call or WhatsApp on +91-9024337038 (Mr. Harsh)",
-        icon: "success",
-        customClass: {
-          popup: "alert-popup",
-          title: "alert-title",
-          text: "alert-txt",
-          confirmButton: "alert-confirm",
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
+        body: json,
+      }).then((res) => res.json());
+
+      if (res.success) {
+        Swal.fire({
+          title: "Thank you! Your Query has been submitted successfully",
+          text: "For quick assistance, call or WhatsApp on +91-9024337038 (Mr. Harsh)",
+          icon: "success",
+          customClass: {
+            popup: "alert-popup",
+            title: "alert-title",
+            text: "alert-txt",
+            confirmButton: "alert-confirm",
+          },
+        });
+        setFormData({
+          name: "",
+          email: "",
+          contact: "",
+          package: "",
+          date: "",
+          numberOfPersons: "",
+          message: "",
+        }); // Reset form
+        setIsFormValid(false);
+      } else {
+        Swal.fire({
+          title: "Oops!",
+          text: "Something went wrong. Please try again later.",
+          icon: "error",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "Unable to submit your query at the moment.",
+        icon: "error",
       });
+    } finally {
+      setLoading(false); // Stop loader
     }
   };
 
@@ -145,10 +176,10 @@ const EnquiryForm = () => {
           ></textarea>
           <button
             type="submit"
-            disabled={!isFormValid}
-            className={`submit-button ${!isFormValid ? "disabled" : ""}`}
+            disabled={!isFormValid || loading}
+            className={`submit-button ${!isFormValid || loading ? "disabled" : ""}`}
           >
-            Enquire Now
+            {loading ? "Submitting..." : "Enquire Now"}
           </button>
         </form>
       </div>
